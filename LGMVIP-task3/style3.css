@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 20px;
+    background: #e2e1e0;
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    margin: 20px;
+}
+
+select {
+    width: 61px;
+    padding: 5.5px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    color: #5c616c;
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0 0 0 #5c616c;
+    -webkit-transition: box-shadow 0.6s ease-in-out;
+    -moz-transition: box-shadow 0.6s ease-in-out;
+    -ms-transition: box-shadow 0.6s ease-in-out;
+    -o-transition: box-shadow 0.6s ease-in-out;
+    transition: box-shadow 0.6s ease-in-out;
+}
+
+@-moz-document url-prefix() {
+     ::-moz-focus-inner {
+        border: none
+    }
+    select:-moz-focusring {
+        color: transparent;
+        text-shadow: 0px 0px 0px #5c616c;
+    }
+}
+
+a,
+a:visited,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: #718e9e;
+    outline: 0;
+}
+
+.sliding-middle-out {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 1px;
+}
+
+.sliding-middle-out:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 1px;
+    width: 0px;
+    background: transparent;
+    -webkit-transition: width 250ms ease-in-out, background-color 250ms ease-in-out;
+    -moz-transition: width 250ms ease-in-out, background-color 250ms ease-in-out;
+    -ms-transition: width 250ms ease-in-out, background-color 250ms ease-in-out;
+    -o-transition: width 250ms ease-in-out, background-color 250ms ease-in-out;
+    transition: width 250ms ease-in-out, background-color 250ms ease-in-out;
+}
+
+.sliding-middle-out:hover:after {
+    width: 100%;
+    background: #718e9e;
+    outline: 0;
+}
+
+select,
+select:active,
+select:focus,
+select:hover {
+    outline: 0;
+}
+
+select:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+/* Use custom arrow */
+
+.mdl-selectfield select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.mdl-selectfield {
+    position: relative;
+}
+
+.mdl-selectfield:after {
+    position: relative;
+    top: 1em;
+    right: 1em;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: .25em solid transparent;
+    border-right: .25em solid transparent;
+    border-top: 0.375em solid rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+}
+
+input {
+    padding: 7px 5.5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    -webkit-transition: box-shadow 0.6s ease-in-out;
+    -moz-transition: box-shadow 0.6s ease-in-out;
+    -ms-transition: box-shadow 0.6s ease-in-out;
+    -o-transition: box-shadow 0.6s ease-in-out;
+    transition: box-shadow 0.6s ease-in-out;
+}
+
+input:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+label,
+input,
+form,
+select {
+    margin-bottom: 10px;
+}
+
+h6 {
+    margin-top: 10px;
+}
+

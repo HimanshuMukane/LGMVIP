@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+ 
+    <meta charset="UTF-8">
+    <title>Display Form Data Before Submit &amp; Its Query-String</title>
+    <link rel="stylesheet" href="style3.css">
+
+      
+</head>
+
+<body translate="no">
+    <h2>Form</h2>
+
+    <form id="my_form">
+        <label for="name">First name: </label>
+        <input type="text" id="name" name="Firstname" value="" placeholder="Your name here...">
+        <br>
+        <label for="surname">Last name: </label>
+        <input type="text" id="surname" name="Lastname" value="" placeholder="Your surname here...">
+        <br>
+        <label for="email">email: </label>
+        <input type="text" id="email" name="email" value="" placeholder="Your email here...">
+        <br>
+        <label for="website">website </label>
+        <input type="text" id="website" name="website" value="" placeholder="Your website here...">
+        <br>
+        <label for="Image">Image Link </label>
+        <input type="text" id="Image" name="Image" value="" placeholder="Your Image link here...">
+        <br>
+        <div class="mdl-selectfield">
+            <span>
+			Gender: <select id="gender" name="Gender">
+				<option class='short' data-limit='8' value="Male">Male</option>
+				<option class='short' data-limit='8' value="Female">Female</option>
+			</select>
+		</span>
+        </div>
+
+      
+        <br>
+        <input type="submit" value="Submit" title="Get form's query-string">
+    </form>
+
+    <span id="check_before_submit"></span>
+
+    <h6>
+        <a href="https://stackoverflow.com/a/52193579/2149425" class="sliding-middle-out" title="Topic on Stack Overflow" target="_blank">Reference</a>
+    </h6>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script id="rendered-js">
+        function shortString() {
+            var shorts = document.querySelectorAll('.short');
+            if (shorts) {
+                Array.prototype.forEach.call(shorts, function(ele) {
+                    var str = ele.innerText,
+                        indt = '...';
+
+                    if (ele.hasAttribute('data-limit')) {
+                        if (str.length > ele.dataset.limit) {
+                            var result = `${str.substring(0, ele.dataset.limit - indt.length).trim()}${indt}`;
+                            ele.innerText = result;
+                            str = null;
+                            result = null;
+                        }
+                    } else {
+                        throw Error('Cannot find attribute \'data-limit\'');
+                    }
+                });
+            }
+        }
+
+        $(function() {
+            shortString();
+
+            $("#my_form").on("submit", function(event) {
+                event.preventDefault();
+                var str = "<em>First name:</em><strong> " + $("#name").val() + "</strong><br><em>Last name:</em><strong> " + $("#surname").val() 
+                    + "</strong><br><em>Email:</em><strong> " + $("#email").val()   + "</strong><br><em>Website:</em><strong> " + $("#website").val()  + "</strong><br><em>Image:</em><strong> " + $("#Image").val()+ "</strong><br><em>My Gender:</em><strong> " + $("select#gender option:selected").text()  + "</strong>";
+
+                $('#check_before_submit').html(str);
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
