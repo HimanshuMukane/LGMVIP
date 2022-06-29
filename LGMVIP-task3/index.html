@@ -80,7 +80,7 @@
             $("#my_form").on("submit", function(event) {
                 event.preventDefault();
                 var str = "<em>First name:</em><strong> " + $("#name").val() + "</strong><br><em>Last name:</em><strong> " + $("#surname").val() 
-                    + "</strong><br><em>Email:</em><strong> " + $("#email").val()   + "</strong><br><em>Website:</em><strong> " + $("#website").val()  + "</strong><br><em>Image:</em><strong> " + $("#Image").val()+ "</strong><br><em>My Gender:</em><strong> " + $("select#gender option:selected").text()  + "</strong>";
+                    + "</strong><br><em>Email:</em><strong> " + $("#email").val()   + "</strong><br><em>Website:</em><strong> " + $("#website").val()  + "</strong><br><em>Image:</em><strong> <img src=' " + $("#Image").val() +" '>+ "</strong><br><em>My Gender:</em><strong> " + $("select#gender option:selected").text()  + "</strong>";
 
                 $('#check_before_submit').html(str);
             });
